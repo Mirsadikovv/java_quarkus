@@ -1,0 +1,27 @@
+quarkus:
+  datasource:
+    db-kind: postgresql
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    jdbc:
+      url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}
+
+  hibernate-orm:
+    database:
+      generation: update
+    log:
+      sql: true
+    sql-load-script: no-file
+
+  swagger-ui:
+    always-include: true
+
+  # log:
+  #   category:
+  #     "io.agroal":
+  #       level: DEBUG
+  #     "org.hibernate":
+  #       level: DEBUG
+  #   console:
+  #     enable: true
+  #     format: "%d{HH:mm:ss} %-5p [%c{2.}] (%t) %s%e%n"
